@@ -74,7 +74,7 @@ function getTodos() {
     document.querySelector('#user-email').innerHTML = (currentUser != null ? currentUser.email : '');
 
     if (currentUser === null) {
-        todoList.innerHTML = '<h4 class="center-align">Please login to get Todos</h4>';
+        todoList.innerHTML = '<h4 class="center-align">Please login to get Tasks</h4>';
         return;
     }
     db.collection('alltodos').doc(currentUser.uid).collection('todos').orderBy('title').onSnapshot(snapshot => {
